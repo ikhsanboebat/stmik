@@ -55,7 +55,7 @@
                                                     var data = [@foreach ($monitoring as $mon2)
                                                         [ "{{ isset($ia) ? ++$ia : $ia=1 }}", "{{ $mon2->monitoring_ppm }}" ],
                                                     @endforeach];
-                                                    var dataset = [{ label: "Grafik pH", data: data, color: "#FFB600" }];
+                                                    var dataset = [{ label: "Grafik ppm", data: data, color: "#FFB600" }];
                                                     var ticks = [@foreach ($monitoring as $mon3)
                                                     [ "{{ isset($ib) ? ++$ib : $ib=1 }}", "{{ date('H', strtotime($mon3->monitoring_created_at)) }}" ],
                                                     @endforeach];
@@ -172,7 +172,7 @@
                                                         <tr>
                                                             <td class="text-default font-weight-bold">{{ date('H', strtotime($mon->monitoring_created_at)) }}</td>
                                                             <td class="text-default font-weight-bold">Konsentrasi</td>
-                                                            <td class="text-warning font-weight-bold">{{ $mon->monitoring_ppm }} pH</td>
+                                                            <td class="text-warning font-weight-bold">{{ $mon->monitoring_ppm }} ppm</td>
                                                             <td class="text-dark font-weight-bold">{{ $mon->monitoring_created_at }}</td>
                                                         </tr>
                                                     @endforeach
